@@ -6,7 +6,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class HorarisSQLiteHelper extends SQLiteOpenHelper {
 
-    private String crearTabla = "";
+    private String[] crearTablas = {"CREATE TABLE HORARIS (ID_HORARI INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "GRUP )",
+            "",
+            "",
+            ""};
 
     public HorarisSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -14,7 +18,9 @@ public class HorarisSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        //sqLiteDatabase.execSQL();
+        for (String sentencia : crearTablas) {
+            sqLiteDatabase.execSQL(sentencia);
+        }
     }
 
     @Override
