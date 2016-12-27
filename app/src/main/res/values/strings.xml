@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Horari DAM</string>
+    <array name="array_dias">
+        <item>Selecciona un día de la semana</item>
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miércoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sabado</item>
+        <item>Domingo</item>
+    </array>
 </resources>
