@@ -10,4 +10,9 @@
         <item>Sabado</item>
         <item>Domingo</item>
     </array>
+    <string name="txt_hora_inici">Inici:</string>
+    <string name="txt_hora_final">| Final:</string>
+    <string name="txt_professor">Professor:</string>
+    <string name="txt_aula">Aula:</string>
+    <string name="cargando">Cargando...</string>
 </resources>

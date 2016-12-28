@@ -22,7 +22,7 @@ public class Listener implements AdapterView.OnItemSelectedListener {
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        ArrayList<Horari> horaris = null;
+        ArrayList<Horari> horaris = new ArrayList<>();
         if (position != 0) {
             horaris = mainActivity.getGestorBD().getHorariPorDia(position);
         }

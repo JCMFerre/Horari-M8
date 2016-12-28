@@ -9,14 +9,18 @@ public class Horari {
     private int id;
     private String grup;
     private String modul;
+    private String professor;
+    private String aula;
     private String horaInici;
     private String horaFinal;
     private int diaSetmana;
 
-    public Horari(int id, String grup, String modul, String horaInici, String horaFinal, int diaSetmana) {
+    public Horari(int id, String grup, String modul, String professor, String aula, String horaInici, String horaFinal, int diaSetmana) {
         this.id = id;
         this.grup = grup;
         this.modul = modul;
+        this.professor = professor;
+        this.aula = aula;
         this.horaInici = horaInici;
         this.horaFinal = horaFinal;
         this.diaSetmana = diaSetmana;
@@ -44,6 +48,22 @@ public class Horari {
 
     public void setModul(String modul) {
         this.modul = modul;
+    }
+
+    public String getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(String professor) {
+        this.professor = professor;
+    }
+
+    public String getAula() {
+        return aula;
+    }
+
+    public void setAula(String aula) {
+        this.aula = aula;
     }
 
     public String getHoraInici() {
@@ -76,6 +96,8 @@ public class Horari {
                 "id=" + id +
                 ", grup='" + grup + '\'' +
                 ", modul='" + modul + '\'' +
+                ", professor='" + professor + '\'' +
+                ", aula='" + aula + '\'' +
                 ", horaInici='" + horaInici + '\'' +
                 ", horaFinal='" + horaFinal + '\'' +
                 ", diaSetmana=" + diaSetmana +
