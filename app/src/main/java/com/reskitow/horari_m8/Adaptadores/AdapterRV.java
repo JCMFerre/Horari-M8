@@ -2,7 +2,6 @@ package com.reskitow.horari_m8.Adaptadores;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +9,6 @@ import android.widget.TextView;
 
 import com.reskitow.horari_m8.Model.Horari;
 import com.reskitow.horari_m8.R;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -60,11 +57,11 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.HorariViewHolder> 
 
         public HorariViewHolder(View itemView) {
             super(itemView);
-            nomModul = (TextView) itemView.findViewById(R.id.modul_horari);
-            nomGrup = (TextView) itemView.findViewById(R.id.nom_grup);
-            nomProfessor = (TextView) itemView.findViewById(R.id.profe_horari);
+            nomModul = (TextView) itemView.findViewById(R.id.modul_widget);
+            nomGrup = (TextView) itemView.findViewById(R.id.nom_widget);
+            nomProfessor = (TextView) itemView.findViewById(R.id.profe_widget);
             horari = (TextView) itemView.findViewById(R.id.horas_horari);
-            nomAula = (TextView) itemView.findViewById(R.id.aula_horari);
+            nomAula = (TextView) itemView.findViewById(R.id.aula_widget);
         }
     }
 

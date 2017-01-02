@@ -7,8 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.preference.PreferenceManager;
 
 import com.reskitow.horari_m8.Model.Horari;
+import com.reskitow.horari_m8.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class HorarisSQLiteHelper extends SQLiteOpenHelper {
 
@@ -16,10 +19,11 @@ public class HorarisSQLiteHelper extends SQLiteOpenHelper {
     private String columnasARecuperar = "ID_HORARI, NOM_GRUP, NOM_MODUL, NOM_PROFESSOR, NOM_AULA, HORA_INICI, HORA_FI, DIA_SETMANA";
     private String tablasARecuperar = "HORARIS H, GRUPS G, MODULS M, PROFESSORS P, AULAS A";
     private String whereJoin = "H.GRUP = G.ID_GRUP AND H.MODUL = M.ID_MODUL AND H.PROFESSOR = P.ID_PROFESSOR AND H.AULA = A.ID_AULA";
-    private String grup;
+    private Context context;
 
     public HorarisSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
+        this.context = context;
     }
 
     @Override
@@ -59,9 +63,16 @@ public class HorarisSQLiteHelper extends SQLiteOpenHelper {
     }
 
     public Horari getHorariPerHora() {
-        Horari h = null;
-        SQLiteDatabase sqlite = getReadableDatabase();
-        return h;
+        Calendar cal = Calendar.getInstance();
+        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        String grup = PreferenceManager.getDefaultSharedPreferences(context).getString(context.getString(R.string.valor_grupo), "A1");
+        String diaSemana = String.valueOf((cal.get(Calendar.DAY_OF_WEEK) + 1));
+        Cursor c = this.getReadableDatabase().rawQuery("SELECT " + columnasARecuperar + " FROM " + tablasARecuperar +
+                        " WHERE " + whereJoin + " AND DIA_SETMANA = ? AND NOM_GRUP = ? AND ? BETWEEN HORA_INICI AND HORA_FI",
+                new String[]{diaSemana, grup, sdf.format(cal)});
+        ArrayList<Horari> horaris = getHorariPorCursor(c);
+        return (horaris.size() == 0 ? null : horaris.get(0));
     }
 
     private ArrayList<Horari> getHorariPorCursor(Cursor c) {
