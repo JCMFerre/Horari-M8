@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/configuracion_usuario">
+        <EditTextPreference
+            android:key="@string/valor_usuario"
+            android:summary="@string/descripcion_nombre"
+            android:title="@string/nombre_prefs" />
+        <ListPreference
+            android:dialogTitle="@string/indicar_grupo"
+            android:entries="@array/array_grupos"
+            android:entryValues="@array/array_grupos"
+            android:key="@string/valor_grupo"
+            android:summary="@string/descripcion_grupo"
+            android:title="@string/grupo_prefs" />
+    </PreferenceCategory>
+</PreferenceScreen>

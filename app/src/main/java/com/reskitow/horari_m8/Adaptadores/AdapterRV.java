@@ -47,7 +47,6 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.HorariViewHolder> 
 
     @Override
     public int getItemCount() {
-        Log.i("ITEMCOUNT", "¿Cuando entro aquí? " + horaris.size());
         return horaris.size();
     }
 

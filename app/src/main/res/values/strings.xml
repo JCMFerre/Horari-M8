@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Horari DAM</string>
     <array name="array_dias">
-        <item>Selecciona un día de la semana</item>
+        <item>Selecciona un día de la semana *</item>
         <item>Lunes</item>
         <item>Martes</item>
         <item>Miércoles</item>
@@ -10,9 +10,25 @@
         <item>Sabado</item>
         <item>Domingo</item>
     </array>
+    <array name="array_grupos">
+        <item>A1</item>
+        <item>A2</item>
+    </array>
     <string name="txt_hora_inici">Inici:</string>
     <string name="txt_hora_final">| Final:</string>
     <string name="txt_professor">Professor:</string>
     <string name="txt_aula">Aula:</string>
     <string name="cargando">Cargando...</string>
+    <string name="selecciona_opcion">* Debes seleccionar un día de la semana.</string>
+    <string name="no_resultados">No hay ningún horario registrado con el día seleccionado.</string>
+    <string name="menu_op1">Configuración</string>
+    <string name="configuracion_usuario">Configuración usuario</string>
+    <string name="descripcion_nombre">Introduce tu nombre.</string>
+    <string name="nombre_prefs">Nombre</string>
+    <string name="indicar_grupo">Indicar grupo</string>
+    <string name="grupo_prefs">Grupo</string>
+    <string name="descripcion_grupo">Indica el grupo.</string>
+    <string name="valor_usuario" translatable="false">nombre_usuario</string>
+    <string name="valor_grupo" translatable="false">grupo_usuario</string>
+    <string name="preferencias_activity">Configuración</string>
 </resources>

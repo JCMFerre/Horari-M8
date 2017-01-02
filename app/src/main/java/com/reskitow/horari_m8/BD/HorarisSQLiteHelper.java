@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.preference.PreferenceManager;
 
 import com.reskitow.horari_m8.Model.Horari;
 
@@ -19,7 +20,6 @@ public class HorarisSQLiteHelper extends SQLiteOpenHelper {
 
     public HorarisSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
-        grup = "A1";
     }
 
     @Override
@@ -52,21 +52,16 @@ public class HorarisSQLiteHelper extends SQLiteOpenHelper {
         }
     }
 
-    public ArrayList<Horari> getHorariPorDia(int dia) {
+    public ArrayList<Horari> getHorariPorDia(int dia, String grup) {
         Cursor c = this.getReadableDatabase().rawQuery("SELECT " + columnasARecuperar + " FROM " + tablasARecuperar +
                 " WHERE " + whereJoin + " AND DIA_SETMANA = ? AND NOM_GRUP = ?", new String[]{String.valueOf(dia), grup});
         return getHorariPorCursor(c);
     }
 
-    /*
     public Horari getHorariPerHora() {
         Horari h = null;
         SQLiteDatabase sqlite = getReadableDatabase();
         return h;
-    }*/
-
-    public void closeDB() {
-        close();
     }
 
     private ArrayList<Horari> getHorariPorCursor(Cursor c) {
@@ -81,22 +76,8 @@ public class HorarisSQLiteHelper extends SQLiteOpenHelper {
         return horaris;
     }
 
-    public ArrayList<Horari> getAllHoraris() {
-        Cursor c = getReadableDatabase().rawQuery("SELECT " + columnasARecuperar + " FROM " + tablasARecuperar +
-                " WHERE " + whereJoin + " AND NOM_GRUP = ?", new String[]{grup});
-        return getHorariPorCursor(c);
-    }
-
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int versionAnterior, int versionNueva) {
 
-    }
-
-    public String getGrup() {
-        return grup;
-    }
-
-    public void setGrup(String grup) {
-        this.grup = grup;
     }
 }
