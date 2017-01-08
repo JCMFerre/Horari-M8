@@ -5,10 +5,6 @@ import android.preference.PreferenceFragment;
 
 import com.reskitow.horari_m8.R;
 
-/**
- * Created by RW-PC on 02/01/2017.
- */
-
 public class PreferenciasFragment extends PreferenceFragment {
 
     @Override

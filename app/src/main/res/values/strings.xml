@@ -14,9 +14,9 @@
         <item>A1</item>
         <item>A2</item>
     </array>
-    <string name="txt_hora_inici">Inici:</string>
+    <string name="txt_hora_inici">Inicio:</string>
     <string name="txt_hora_final">| Final:</string>
-    <string name="txt_professor">Professor/a:</string>
+    <string name="txt_professor">Profesor/a:</string>
     <string name="txt_aula">Aula:</string>
     <string name="cargando">Cargando...</string>
     <string name="selecciona_opcion">* Debes seleccionar un día de la semana.</string>
@@ -32,7 +32,7 @@
     <string name="valor_grupo" translatable="false">grupo_usuario</string>
     <string name="preferencias_activity">Configuración</string>
     <string name="appwidget_text">Horario DAM</string>
-    <string name="add_widget">Add widget</string>
+    <string name="add_widget">Añadir widget</string>
     <string name="widget_no_resultados">No tienes ningún horario ahora mismo.</string>
     <string name="widget_desinstalado">¡Widget eliminado correctamente!</string>
     <string name="acerca_de">Acerca de</string>

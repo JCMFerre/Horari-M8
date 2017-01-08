@@ -6,16 +6,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.reskitow.horari_m8.Model.Horari;
 import com.reskitow.horari_m8.R;
 
 import java.util.ArrayList;
-
-/**
- * Created by RW-PC on 27/12/2016.
- */
 
 public class Listener implements AdapterView.OnItemSelectedListener {
 
