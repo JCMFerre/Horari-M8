@@ -3,15 +3,25 @@
 
     <PreferenceCategory android:title="@string/configuracion_usuario">
         <EditTextPreference
+            android:inputType="textCapSentences"
             android:key="@string/valor_usuario"
             android:summary="@string/descripcion_nombre"
             android:title="@string/nombre_prefs" />
         <ListPreference
+            android:defaultValue="0"
             android:dialogTitle="@string/indicar_grupo"
             android:entries="@array/array_grupos"
             android:entryValues="@array/array_grupos"
             android:key="@string/valor_grupo"
             android:summary="@string/descripcion_grupo"
             android:title="@string/grupo_prefs" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:persistent="false"
+        android:title="@string/acerca_de">
+        <Preference
+            android:persistent="false"
+            android:summary="@string/descripcion_acerca_de"
+            android:title="@string/acerca_de_info" />
     </PreferenceCategory>
 </PreferenceScreen>

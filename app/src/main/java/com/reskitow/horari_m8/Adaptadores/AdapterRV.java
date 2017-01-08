@@ -12,10 +12,6 @@ import com.reskitow.horari_m8.R;
 
 import java.util.ArrayList;
 
-/**
- * Created by RW-PC on 27/12/2016.
- */
-
 public class AdapterRV extends RecyclerView.Adapter<AdapterRV.HorariViewHolder> {
 
     private ArrayList<Horari> horaris;

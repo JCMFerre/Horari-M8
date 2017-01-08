@@ -16,7 +16,7 @@
     </array>
     <string name="txt_hora_inici">Inici:</string>
     <string name="txt_hora_final">| Final:</string>
-    <string name="txt_professor">Professor:</string>
+    <string name="txt_professor">Professor/a:</string>
     <string name="txt_aula">Aula:</string>
     <string name="cargando">Cargando...</string>
     <string name="selecciona_opcion">* Debes seleccionar un día de la semana.</string>
@@ -27,11 +27,15 @@
     <string name="nombre_prefs">Nombre</string>
     <string name="indicar_grupo">Indicar grupo</string>
     <string name="grupo_prefs">Grupo</string>
-    <string name="descripcion_grupo">Indica el grupo.</string>
+    <string name="descripcion_grupo">Indica el grupo al que perteneces.</string>
     <string name="valor_usuario" translatable="false">nombre_usuario</string>
     <string name="valor_grupo" translatable="false">grupo_usuario</string>
     <string name="preferencias_activity">Configuración</string>
-    <string name="appwidget_text">EXAMPLE</string>
+    <string name="appwidget_text">Horario DAM</string>
     <string name="add_widget">Add widget</string>
-    <string name="widget_no_resultados">No tienes ningún horario ahora mismo.\n\nComprueba que has configurado bien el grupo.</string>
+    <string name="widget_no_resultados">No tienes ningún horario ahora mismo.</string>
+    <string name="widget_desinstalado">¡Widget eliminado correctamente!</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="descripcion_acerca_de">Diseño y código por Joan Creus Martin</string>
+    <string name="acerca_de_info">Información</string>
 </resources>

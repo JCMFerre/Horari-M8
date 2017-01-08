@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void iniciarAttr() {
         listener = new Listener(this);
-        gestorBD = new HorarisSQLiteHelper(this, HorarisSQLiteHelper.NOMBRE_BD, null, 1);
+        gestorBD = new HorarisSQLiteHelper(this);
         adapterRV = new AdapterRV();
     }
 

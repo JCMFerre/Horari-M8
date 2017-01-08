@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import com.reskitow.horari_m8.Model.Horari;
 import com.reskitow.horari_m8.R;
@@ -15,14 +16,13 @@ import java.util.Calendar;
 
 public class HorarisSQLiteHelper extends SQLiteOpenHelper {
 
-    public static final String NOMBRE_BD = "DB_HORARI";
     private String columnasARecuperar = "ID_HORARI, NOM_GRUP, NOM_MODUL, NOM_PROFESSOR, NOM_AULA, HORA_INICI, HORA_FI, DIA_SETMANA";
     private String tablasARecuperar = "HORARIS H, GRUPS G, MODULS M, PROFESSORS P, AULAS A";
     private String whereJoin = "H.GRUP = G.ID_GRUP AND H.MODUL = M.ID_MODUL AND H.PROFESSOR = P.ID_PROFESSOR AND H.AULA = A.ID_AULA";
     private Context context;
 
-    public HorarisSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public HorarisSQLiteHelper(Context context) {
+        super(context, "DB_HORARI", null, 1);
         this.context = context;
     }
 
@@ -67,12 +67,16 @@ public class HorarisSQLiteHelper extends SQLiteOpenHelper {
         cal.setFirstDayOfWeek(Calendar.MONDAY);
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String grup = PreferenceManager.getDefaultSharedPreferences(context).getString(context.getString(R.string.valor_grupo), "A1");
-        String diaSemana = String.valueOf((cal.get(Calendar.DAY_OF_WEEK) + 1));
+        String diaSemana = String.valueOf(getDaysOfWeek()[cal.get(Calendar.DAY_OF_WEEK) - 1]);
         Cursor c = this.getReadableDatabase().rawQuery("SELECT " + columnasARecuperar + " FROM " + tablasARecuperar +
                         " WHERE " + whereJoin + " AND DIA_SETMANA = ? AND NOM_GRUP = ? AND ? BETWEEN HORA_INICI AND HORA_FI",
-                new String[]{diaSemana, grup, sdf.format(cal)});
+                new String[]{diaSemana, grup, sdf.format(cal.getTime())});
         ArrayList<Horari> horaris = getHorariPorCursor(c);
         return (horaris.size() == 0 ? null : horaris.get(0));
+    }
+
+    private int[] getDaysOfWeek() {
+        return new int[]{7, 1, 2, 3, 4, 5, 6};
     }
 
     private ArrayList<Horari> getHorariPorCursor(Cursor c) {
